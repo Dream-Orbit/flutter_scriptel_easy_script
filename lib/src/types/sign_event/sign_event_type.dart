@@ -1,0 +1,9 @@
+enum SignEventType {
+  SIGN_START,
+  SIGN_END,
+  SIGN_CANCEL,
+  SIGN_META,
+  SIGN_COOR,
+  SIGN_NEW_STROKE,
+  UNKNOWN,
+}
