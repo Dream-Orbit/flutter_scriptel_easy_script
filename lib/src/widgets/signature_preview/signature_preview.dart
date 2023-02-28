@@ -193,6 +193,16 @@ class SignaturePreview extends StatelessWidget {
     );
   }
 
+  /// When this method is called, the signature is registered as complete and eventually [onSignCapture] is called
+  Future<void> captureSignature() async {
+    await _registerSignComplete();
+  }
+
+  /// When this method is called, the signature is registered as cancelled
+  void cancelSignature() {
+    _registerSignCancel();
+  }
+
   Future<void> _capture() async {
     if (onSignCapture == null) return;
     Future<Uint8List> captureProcess = Future(() async {
@@ -222,12 +232,11 @@ class SignaturePreview extends StatelessWidget {
     _outlineColor.value = _getOutlineColor();
   }
 
-  void _registerSignComplete() {
+  Future<void> _registerSignComplete() async {
     _state.value = SignaturePreviewWidgetState.DONE;
-    _capture().then((value) {
-      if (autoClearOnDone) _clearSign();
-    });
     _outlineColor.value = _getOutlineColor();
+    await _capture();
+    if (autoClearOnDone) _clearSign();
   }
 
   void _registerSignCancel() {
