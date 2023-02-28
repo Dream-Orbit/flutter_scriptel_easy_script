@@ -82,6 +82,9 @@ class SignaturePreview extends StatelessWidget {
           _registerNewSignStart();
         _registerNewStroke();
       },
+      onPanEnd: (details) {
+        _registerNewStroke();
+      },
       onPanUpdate: (details) {
         if (!enableTouchSign ||
             _state.value != SignaturePreviewWidgetState.SIGNING) return;
