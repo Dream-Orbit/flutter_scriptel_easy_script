@@ -47,6 +47,9 @@ class SignaturePreview extends StatelessWidget {
   /// Enables visual guide line for signing
   final bool enableSignGuide;
 
+  /// Aspect ratio of signature pad, defaults to 240:64 which is scriptel signature pad's ratio
+  final double aspectRatio;
+
   /// A Widget that captures Signature with Scriptel Signature Pad device or touch
   SignaturePreview({
     Key? key,
@@ -59,6 +62,7 @@ class SignaturePreview extends StatelessWidget {
     this.signCapturePixelRatio = 1.0,
     this.enableTouchSign = false,
     this.enableSignGuide = false,
+    this.aspectRatio = DEVICE_ASPECT_RATIO,
   }) : super(key: key) {
     _focusNode.addListener(() => _isFocused.value = _focusNode.hasFocus);
     _plugin.setListener(
@@ -113,7 +117,7 @@ class SignaturePreview extends StatelessWidget {
               valueListenable: _outlineColor,
               builder: (context, outlineColorValue, child) {
                 return AspectRatio(
-                  aspectRatio: DEVICE_ASPECT_RATIO,
+                  aspectRatio: aspectRatio,
                   child: Container(
                     clipBehavior: Clip.hardEdge,
                     decoration: BoxDecoration(
