@@ -47,6 +47,9 @@ class SignaturePreview extends StatelessWidget {
   /// Enables visual guide line for signing
   final bool enableSignGuide;
 
+  /// Disables action buttons that show up in touch mode
+  final bool enableActionButtons;
+
   /// Aspect ratio of signature pad, defaults to 240:64 which is scriptel signature pad's ratio
   final double aspectRatio;
 
@@ -62,6 +65,7 @@ class SignaturePreview extends StatelessWidget {
     this.signCapturePixelRatio = 1.0,
     this.enableTouchSign = false,
     this.enableSignGuide = false,
+    this.enableActionButtons = true,
     this.aspectRatio = DEVICE_ASPECT_RATIO,
   }) : super(key: key) {
     _focusNode.addListener(() => _isFocused.value = _focusNode.hasFocus);
@@ -147,7 +151,7 @@ class SignaturePreview extends StatelessWidget {
                 },
               ),
             ),
-            if (enableTouchSign)
+            if (enableTouchSign && enableActionButtons)
               Positioned(
                 top: 10,
                 right: 10,
