@@ -1,10 +1,11 @@
 name: easyscript
 description: A new Flutter plugin project.
-version: 0.0.1
-homepage:
+version: 1.0.0
+repository: https://github.com/Dream-Orbit/Flutter_scriptel_easy_script.git
+homepage: https://www.dreamorbit.com
 
 environment:
-  sdk: '>=2.18.0-165.1.beta <3.0.0'
+  sdk: '>=2.18.0 <3.0.0'
   flutter: ">=2.5.0"
 
 dependencies:
