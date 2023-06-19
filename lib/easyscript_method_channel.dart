@@ -1,6 +1,6 @@
-import 'package:easyscript/src/types/sign_event/sign_event.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:scriptouch_easyscript/src/types/sign_event/sign_event.dart';
 
 import 'easyscript_platform_interface.dart';
 

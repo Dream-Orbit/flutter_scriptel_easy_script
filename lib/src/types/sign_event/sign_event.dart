@@ -1,11 +1,11 @@
-import 'package:easyscript/src/types/sign_event/sign_event_cancel.dart';
-import 'package:easyscript/src/types/sign_event/sign_event_coordinate.dart';
-import 'package:easyscript/src/types/sign_event/sign_event_end.dart';
-import 'package:easyscript/src/types/sign_event/sign_event_meta.dart';
-import 'package:easyscript/src/types/sign_event/sign_event_new_stroke.dart';
-import 'package:easyscript/src/types/sign_event/sign_event_start.dart';
-import 'package:easyscript/src/types/sign_event/sign_event_type.dart';
-import 'package:easyscript/src/types/sign_event/sign_event_unknown.dart';
+import 'package:scriptouch_easyscript/src/types/sign_event/sign_event_cancel.dart';
+import 'package:scriptouch_easyscript/src/types/sign_event/sign_event_coordinate.dart';
+import 'package:scriptouch_easyscript/src/types/sign_event/sign_event_end.dart';
+import 'package:scriptouch_easyscript/src/types/sign_event/sign_event_meta.dart';
+import 'package:scriptouch_easyscript/src/types/sign_event/sign_event_new_stroke.dart';
+import 'package:scriptouch_easyscript/src/types/sign_event/sign_event_start.dart';
+import 'package:scriptouch_easyscript/src/types/sign_event/sign_event_type.dart';
+import 'package:scriptouch_easyscript/src/types/sign_event/sign_event_unknown.dart';
 
 export 'sign_event_cancel.dart';
 export 'sign_event_coordinate.dart';

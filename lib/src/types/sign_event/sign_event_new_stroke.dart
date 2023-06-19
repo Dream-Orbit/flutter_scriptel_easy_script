@@ -1,5 +1,4 @@
-import 'package:easyscript/src/types/sign_event/sign_event.dart';
-import 'package:easyscript/src/types/sign_event/sign_event_type.dart';
+import 'package:scriptouch_easyscript/src/types/sign_event/sign_event.dart';
 
 class SignEventNewStroke implements SignEvent {
   @override

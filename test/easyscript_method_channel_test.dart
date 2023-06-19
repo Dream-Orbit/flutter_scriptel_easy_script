@@ -1,6 +1,6 @@
-import 'package:easyscript/easyscript_method_channel.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:scriptouch_easyscript/easyscript_method_channel.dart';
 
 void main() {
   MethodChannelEasyscript platform = MethodChannelEasyscript();

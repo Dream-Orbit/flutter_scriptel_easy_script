@@ -1,5 +1,5 @@
-import 'package:easyscript/src/types/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:scriptouch_easyscript/src/types/constants.dart';
 
 class ScriptelButton extends StatelessWidget {
   final void Function() onTap;

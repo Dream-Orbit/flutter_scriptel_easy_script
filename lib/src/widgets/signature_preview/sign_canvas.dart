@@ -1,6 +1,6 @@
-import 'package:easyscript/src/types/constants.dart';
-import 'package:easyscript/src/types/sign_point.dart';
 import 'package:flutter/material.dart';
+import 'package:scriptouch_easyscript/src/types/constants.dart';
+import 'package:scriptouch_easyscript/src/types/sign_point.dart';
 
 class SignCanvas extends CustomPainter {
   late final List<SignPoint> _signPoints;

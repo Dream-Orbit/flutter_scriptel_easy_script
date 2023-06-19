@@ -1,13 +1,13 @@
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
-import 'package:easyscript/easyscript.dart';
-import 'package:easyscript/src/types/constants.dart';
-import 'package:easyscript/src/types/sign_point.dart';
-import 'package:easyscript/src/widgets/scriptel_button.dart';
-import 'package:easyscript/src/widgets/signature_preview/sign_canvas.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:scriptouch_easyscript/easyscript.dart';
+import 'package:scriptouch_easyscript/src/types/constants.dart';
+import 'package:scriptouch_easyscript/src/types/sign_point.dart';
+import 'package:scriptouch_easyscript/src/widgets/scriptel_button.dart';
+import 'package:scriptouch_easyscript/src/widgets/signature_preview/sign_canvas.dart';
 
 class SignaturePreview extends StatelessWidget {
   final Easyscript _plugin = Easyscript();
