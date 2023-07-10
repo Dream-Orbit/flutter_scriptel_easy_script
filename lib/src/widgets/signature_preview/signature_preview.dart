@@ -1,11 +1,14 @@
-import 'dart:typed_data';
+// ignore_for_file: constant_identifier_names
+
 import 'dart:ui' as ui;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:scriptouch_easyscript/easyscript.dart';
 import 'package:scriptouch_easyscript/src/types/constants.dart';
 import 'package:scriptouch_easyscript/src/types/sign_point.dart';
+import 'package:scriptouch_easyscript/src/types/value_notifier_list.dart';
 import 'package:scriptouch_easyscript/src/widgets/scriptel_button.dart';
 import 'package:scriptouch_easyscript/src/widgets/signature_preview/sign_canvas.dart';
 
@@ -17,7 +20,7 @@ class SignaturePreview extends StatelessWidget {
   final ValueNotifier<bool> _isNewStroke = ValueNotifier(false);
   final ValueNotifier<SignaturePreviewWidgetState> _state =
       ValueNotifier(SignaturePreviewWidgetState.IDLE);
-  final ValueNotifier<List<SignPoint>> _drawnSign = ValueNotifier([]);
+  final ValueNotifierList<SignPoint> _drawnSign = ValueNotifierList([]);
   final GlobalKey _signGlobalKey = GlobalKey();
 
   /// Returns drawn signature as png bytes image, when done is pressed on scriptel pad or on touch
@@ -86,8 +89,9 @@ class SignaturePreview extends StatelessWidget {
         FocusScope.of(context).requestFocus(_focusNode);
       },
       onTapDown: (details) {
-        if (_state.value != SignaturePreviewWidgetState.SIGNING)
+        if (_state.value != SignaturePreviewWidgetState.SIGNING) {
           _registerNewSignStart();
+        }
         _registerNewStroke();
       },
       onPanEnd: (details) {
@@ -224,9 +228,8 @@ class SignaturePreview extends StatelessWidget {
 
   void _registerSignCoordinate(double x, double y) {
     _state.value = SignaturePreviewWidgetState.SIGNING;
-    _drawnSign.value.add(SignPoint(x: x, y: y, newStroke: _isNewStroke.value));
+    _drawnSign.add(SignPoint(x: x, y: y, newStroke: _isNewStroke.value));
     _isNewStroke.value = false;
-    _drawnSign.notifyListeners();
   }
 
   void _registerNewSignStart() {

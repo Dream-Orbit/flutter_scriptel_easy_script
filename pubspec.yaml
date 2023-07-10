@@ -1,6 +1,6 @@
 name: scriptouch_easyscript
 description: Flutter wrapper for Scriptouch Easyscript Integration (https://scriptel.com/developers/easyscript/).
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/Dream-Orbit/Flutter_scriptel_easy_script.git
 homepage: https://www.dreamorbit.com
 

@@ -1,5 +1,7 @@
-import 'package:easyscript/easyscript.dart';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:scriptouch_easyscript/easyscript.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +39,7 @@ class _MyAppState extends State<MyApp> {
                   signCapturePixelRatio: 1,
                   onSignCapture: (bytes) async {
                     var path = await bytes.saveToTempDir();
-                    print(path);
+                    log("Signature image saved to: $path");
                   },
                   enableTouchSign: true,
                 ),

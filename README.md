@@ -16,7 +16,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-   scriptouch_easyscript: ^1.0.0
+   scriptouch_easyscript: ^1.0.1
 ```
 
 ## Usage

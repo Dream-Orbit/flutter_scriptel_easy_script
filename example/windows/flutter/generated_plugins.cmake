@@ -3,7 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  easyscript
+        scriptouch_easyscript
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
