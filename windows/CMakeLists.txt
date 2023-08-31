@@ -5,12 +5,12 @@
 cmake_minimum_required(VERSION 3.14)
 
 # Project-level configuration.
-set(PROJECT_NAME "easyscript")
+set(PROJECT_NAME "scriptouch_easyscript")
 project(${PROJECT_NAME} LANGUAGES CXX)
 
 # This value is used when generating builds using this plugin, so it must
 # not be changed
-set(PLUGIN_NAME "easyscript_plugin")
+set(PLUGIN_NAME "scriptouch_easyscript_plugin")
 
 # Any new source files that you add to the plugin should be added here.
 list(APPEND PLUGIN_SOURCES
@@ -26,7 +26,7 @@ list(APPEND PLUGIN_SOURCES
 # Define the plugin library target. Its name must not be changed (see comment
 # on PLUGIN_NAME above).
 add_library(${PLUGIN_NAME} SHARED
-        "include/easyscript/easyscript_plugin_c_api.h"
+        "include/scriptouch_easyscript/easyscript_plugin_c_api.h"
         "easyscript_plugin_c_api.cpp"
         ${PLUGIN_SOURCES}
         )
@@ -53,7 +53,7 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE flutter flutter_wrapper_plugin ${CM
 # List of absolute paths to libraries that should be bundled with the plugin.
 # This list could contain prebuilt libraries, or libraries created by an
 # external build triggered from this build file.
-set(easyscript_bundled_libraries
+set(scriptouch_easyscript_bundled_libraries
         "${CMAKE_CURRENT_SOURCE_DIR}/scriptel/scriptel-easyscript.dll"
         ""
         PARENT_SCOPE
