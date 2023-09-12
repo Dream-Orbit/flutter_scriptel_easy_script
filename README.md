@@ -1,13 +1,20 @@
 # scriptouch_easyscript
 
-Unofficial Flutter wrapper for Scriptel ScripTouch Easyscript Integration (https://scriptel.com/developers/easyscript/).
+![drawing](https://raw.githubusercontent.com/Dream-Orbit/flutter_scriptel_easy_script/dev/assets/header_banner.png)
+
+Unofficial Flutter wrapper for Scriptel ScripTouch Easyscript
+Integration (https://scriptel.com/developers/easyscript/).
 
 ## SignaturePreview Widget
-To integrate the # scriptouch_easyscript signature capturing capability, you need to add the `SignaturePreview` widget to your Widget
+
+To integrate the # scriptouch_easyscript signature capturing capability, you need to add
+the `SignaturePreview` widget to your Widget
 tree.
-The `SignaturePreview` widget is a customizable signature pad integration library for capturing signatures in a Flutter
+The `SignaturePreview` widget is a customizable signature pad integration library for capturing
+signatures in a Flutter
 application.
-It provides a canvas where users can draw their signatures either using Scriptel Signature Pad device or with touch.
+It provides a canvas where users can draw their signatures either using Scriptel Signature Pad
+device or with touch.
 The captured signature can be saved as a PNG image for further processing.
 
 ## Installation
@@ -16,7 +23,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-   scriptouch_easyscript: ^1.0.1
+   scriptouch_easyscript: ^1.0.2
 ```
 
 ## Usage
