@@ -47,6 +47,9 @@ class SignaturePreview extends StatelessWidget {
   /// Enables signature by touch, also enables
   final bool enableTouchSign;
 
+  /// Enables signature by pen, on by default
+  final bool enablePenSign;
+
   /// Enables visual guide line for signing
   final bool enableSignGuide;
 
@@ -67,19 +70,22 @@ class SignaturePreview extends StatelessWidget {
     this.signStrokeWidth = 2,
     this.signCapturePixelRatio = 1.0,
     this.enableTouchSign = false,
+    this.enablePenSign = true,
     this.enableSignGuide = false,
     this.enableActionButtons = true,
     this.aspectRatio = DEVICE_ASPECT_RATIO,
   }) : super(key: key) {
     _focusNode.addListener(() => _isFocused.value = _focusNode.hasFocus);
-    _plugin.setListener(
-      onSignCoordinate: _registerSignCoordinate,
-      onSignCancel: _registerSignCancel,
-      onSignEnd: _registerSignComplete,
-      onSignStart: _registerNewSignStart,
-      onNewStroke: _registerNewStroke,
-      onSignMeta: (model, version, protocolVersion) {},
-    );
+    if (enablePenSign) {
+      _plugin.setListener(
+        onSignCoordinate: _registerSignCoordinate,
+        onSignCancel: _registerSignCancel,
+        onSignEnd: _registerSignComplete,
+        onSignStart: _registerNewSignStart,
+        onNewStroke: _registerNewStroke,
+        onSignMeta: (model, version, protocolVersion) {},
+      );
+    }
   }
 
   @override
