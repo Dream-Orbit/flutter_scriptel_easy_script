@@ -23,6 +23,8 @@ class SignaturePreview extends StatelessWidget {
   final ValueNotifierList<SignPoint> _drawnSign = ValueNotifierList([]);
   final GlobalKey _signGlobalKey = GlobalKey();
 
+  bool get hasSigned => _drawnSign.value.isNotEmpty;
+
   /// Returns drawn signature as png bytes image, when done is pressed on scriptel pad or on touch
   final void Function(Future<Uint8List> signImageBytes)? onSignCapture;
 
@@ -218,7 +220,7 @@ class SignaturePreview extends StatelessWidget {
   }
 
   Future<void> _capture() async {
-    if (onSignCapture == null) return;
+    if (onSignCapture == null || _drawnSign.value.isEmpty) return;
     Future<Uint8List> captureProcess = Future(() async {
       RenderRepaintBoundary? boundary = _signGlobalKey.currentContext!
           .findRenderObject() as RenderRepaintBoundary?;
